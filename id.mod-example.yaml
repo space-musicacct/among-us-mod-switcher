@@ -1,6 +1,7 @@
 profile:
   id: "Vanilla"
   type: "vanilla"
+  vanilla_version: "17.0.1"
 
 # ここから下は自由にコメント増やしてOK
 note: >
