@@ -1,10 +1,16 @@
 profile:
-  id: "Vanilla"
-  type: "vanilla"
-  vanilla_version: "17.0.1"
+  id: "TOH-K"
+  type: "mod"
+  mod_name: "Town Of Host - K"
+  mod_version: "51.14.31.24"
+  loader: "BepInEx"
+  loader_version: "6.0.0-be.735"
+  loader_evidence: "[Message: Preloader] BepInEx 6.0.0-be.735 - Among Us (2025/12/19 21:08:29)"
 
 # ここから下は自由にコメント増やしてOK
 note: >
   typeはvanilla or mod
+  loader情報はBepInEx/LogOutput.logから取得
+  Modの更新があったらmod_versionを更新すること
   Among Us/がアクティブなAmong Usフォルダとなる
   Among Us/ または Among Us - <ID>/内に適切に設置すること
