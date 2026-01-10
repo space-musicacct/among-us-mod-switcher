@@ -1,0 +1,9 @@
+# --- 秘密情報 ---
+*.env
+
+# --- OS・エディタの自動生成ファイル ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
