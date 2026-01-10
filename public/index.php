@@ -168,7 +168,7 @@ $running = $switcher->proc->isAmongUsRunning();
                         $class = ($json['result'] ?? '') === 'ok' ? 'success' : 'error';
                         echo "<span class=\"meta\">{$json['ts']}</span> ";
                         echo "<span class=\"$class\">[$status]</span> ";
-                        echo h($json['from'] ?? '?' . " → " . $json['to'] ?? '?');
+                        echo h(($json['from'] ?? '?') . " → " . ($json['to'] ?? '?'));
                         if (isset($json['message'])) echo " : " . h($json['message']);
                         echo "\n";
                     }
