@@ -50,7 +50,6 @@ try {
 
 // ログ
 $logPath = $switcher->log->logPath();
-$logTail = '';
 $lastResult = null;
 
 $lines = [];
@@ -160,23 +159,29 @@ $running = $switcher->proc->isAmongUsRunning();
             <h3>ログ (最新10件)</h3>
             <pre><?php
                 if ($lines) {
-                    foreach (array_reverse($lines) as $line) {
+                    $tail = array_slice($lines, -10);
+                    $tail = array_reverse($tail);
+
+                    foreach ($tail as $line) {
                         $json = json_decode(trim($line), true);
-                        if (!$json || !isset($json['ts'])) continue;
+                        if (!is_array($json) || !isset($json['ts'])) continue;
 
                         $status = ($json['result'] ?? '') === 'ok' ? '成功' : '失敗';
-                        $class = ($json['result'] ?? '') === 'ok' ? 'success' : 'error';
-                        echo "<span class=\"meta\">{$json['ts']}</span> ";
-                        echo "<span class=\"$class\">[$status]</span> ";
+                        $class  = ($json['result'] ?? '') === 'ok' ? 'success' : 'error';
+
+                        echo '<span class="meta">' . h((string)$json['ts']) . '</span> ';
+                        echo '<span class="' . h($class) . '">[' . h($status) . ']</span> ';
                         echo h(($json['from'] ?? '?') . " → " . ($json['to'] ?? '?'));
-                        if (isset($json['message'])) echo " : " . h($json['message']);
+
+                        if (isset($json['error']))   echo ': ' . h((string)$json['error']);
+                        if (isset($json['message'])) echo ': ' . h((string)$json['message']);
                         echo "\n";
                     }
                 } else {
                     echo "ログはまだありません。";
                 }
-                ?>
-            </pre>
+                ?></pre>
+
             <p class="meta">Logの保存先：<?= h($logPath) ?></p>
         </section>
     </div>
