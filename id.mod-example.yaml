@@ -1,0 +1,9 @@
+profile:
+  id: "Vanilla"
+  type: "vanilla"
+
+# ここから下は自由にコメント増やしてOK
+note: >
+  typeはvanilla or mod
+  Among Us/がアクティブなAmong Usフォルダとなる
+  Among Us/ または Among Us - <ID>/内に適切に設置すること
