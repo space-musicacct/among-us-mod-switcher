@@ -21,8 +21,8 @@ MODを頻繁に切り替える人で、手動で切り替えるのが面倒な�
 2. `config.example.php` → `config.php` にリネーム
 3. `config.php` 内の `return` の中身を必要に応じて自分の環境に修正
 4. XAMPPのhtdocsなどにフォルダごと配置
-5. ブラウザで `http://localhost/among-us-mod-switcher/` を開く
-6. Among Usを終了させた状態で切り替え実行
+5. Among Usを終了させた状態でブラウザで `http://localhost/among-us-mod-switcher/` を開く
+6. 切り替え実行
 
 ## フォルダ構成の作り方の例
 ```
@@ -38,7 +38,7 @@ MODを頻繁に切り替える人で、手動で切り替えるのが面倒な�
 2. `id.mod-example.yaml`, `id.vanilla-example.yaml`を参考に、各フォルダ (`Among Us/`, `Among Us - Vanilla/`, `Among Us - SNR/` など) 内に `id.yaml` を置いてください。
 3. Among Usが起動中の場合は切り替えできません。
 4. 初回使用時はバックアップ推奨です。
-5. このツールはローカル専用です。公開サーバーには置かないでください。
+5. このツールはローカル環境専用です。公開サーバーには置かないでください。
 
 ## ライセンス
 MIT Licenseです。  
